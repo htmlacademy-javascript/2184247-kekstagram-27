@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Aelita Serour](https://up.htmlacademy.ru/javascript/27/user/2184247).
-* Наставник: `Неизвестно`.
+* Наставник: `Rail Sakhaviev`.
 
 ---
 
