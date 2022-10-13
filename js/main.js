@@ -1,4 +1,4 @@
-const NAME = [
+const NAMES = [
   'Adam',
   'Adele',
   'Adrien',
@@ -27,11 +27,25 @@ const NAME = [
 ];
 
 
-const numberID = getNumber(ARRAY_NUMBER);
-  return {
-id: getRandomInteger(1,25); 
-url: 'photos/${getRandomInteger(1,25)}.jpg'; 
-description: 'Salut, toi!';
-likes: getRandomInteger(15,200); 
-comments 
-}
+const DESCRIPTIONS = [
+  'Salut toi!',
+  'Je suis un petit chaton, miaou!',
+  'Donnez-moi quelque chose a manger, moore!',
+  'Frottes-moi, mew!',
+  'Est-ce que cest un chien?!',
+  'Jai tres faim!',
+  'Donne-moi du lait!',
+];
+
+const getRandomPhotoInformation = (id) => ({
+  id: id + 1,
+  url: `photos/${ id + 1 }.jpg`,
+  description: getRandomArrayElement(DESCRIPTIONS),
+  likes: getRandomNumber (15, 200),
+  comments: {
+    id: id + 1,
+    avatar: `img/avatar-${ getRandomNumber (1, 6) }.svg`,
+    message: getRandomArrayElement(MESSAGE),
+    name: getRandomArrayElement(NAME)
+  }
+});
