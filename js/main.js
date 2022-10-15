@@ -1,4 +1,4 @@
-const names = [
+const NAMES = [
   'Adam',
   'Adele',
   'Adrien',
@@ -27,7 +27,7 @@ const names = [
 ];
 
 
-const descriptions = [
+const DESCRIPTIONS = [
   'Salut toi!',
   'Je suis un petit chaton, miaou!',
   'Donnez-moi quelque chose a manger, moore!',
@@ -37,13 +37,13 @@ const descriptions = [
   'Donne-moi du lait!',
 ];
 
-const messages = [
+const MESSAGES = [
   'В целом всё неплохо. Но не всё.',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-const picDataCounter = 25;
+const PICDATACOUNTER = 25;
 
 const getRandomNumber = (minNumber, maxNumber) => {
   let min = Math.ceil(minNumber);
@@ -68,16 +68,16 @@ const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements
 const getRandomPicData = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
-  description: getRandomArrayElement(descriptions),
+  description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomNumber (15, 200),
   comments: {
     id: id + 1,
     avatar: `img/avatar-${ getRandomNumber (1, 6) }.svg`,
-    message: getRandomArrayElement(messages),
-    name: getRandomArrayElement(names)
+    message: getRandomArrayElement(MESSAGES),
+    name: getRandomArrayElement(NAMES)
   }
 });
 
 const getRandomPicData = (length) => Array.from({length: length}, (_, index) => getRandomPicData(index));
 
-getRandomPicData(picDataCounter);
+getRandomPicData(PICDATACOUNTER);
