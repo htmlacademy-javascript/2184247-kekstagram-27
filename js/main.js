@@ -65,7 +65,7 @@ const getRandomNumber = (minNumber, maxNumber) => {
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
 
-const getRandomPicData = (id) => ({
+const generatePictures = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
@@ -78,6 +78,6 @@ const getRandomPicData = (id) => ({
   }
 });
 
-const getRandomPicData = (length) => Array.from({length: length}, (_, index) => getRandomPicData(index));
+const generatePictures = (count) => Array.from( arrayLike {length: count}, (_, index) => generatePicture(index));
 
-getRandomPicData(PICDATACOUNTER);
+generatePictures(PITURES_COUNT);
