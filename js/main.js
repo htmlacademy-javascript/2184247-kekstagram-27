@@ -45,39 +45,24 @@ const MESSAGES = [
 
 const PICTURES_COUNT = 25;
 
-const getRandomNumber = (minNumber, maxNumber) => {
-  let min = Math.ceil(minNumber);
-  let max = Math.floor(maxNumber);
-
-  if (max < min) {
-    const number = min;
-    min = max;
-    max = number;
-  }
-
-  if (min < 0 || max < 0) {
+const getRandomNumber = (min, max) => {
+ if (min > max) {
     return NaN;
   }
-
-  return Math.floor (Math.random() * (max - min + 1)) + min;
+ return Math.floor (Math.random() * (max - min + 1)) + min;
 };
 
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
 
-const generatePictures = (id) => ({
+const generateComment = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomNumber (15, 200),
-  comments: {
-    id: id + 1,
-    avatar: `img/avatar-${ getRandomNumber (1, 6) }.svg`,
-    message: getRandomArrayElement(MESSAGES),
-    name: getRandomArrayElement(NAMES)
-  }
+  comments: generateComments(getRandomNumber(0,10))
 });
 
-const generatePictures = (count) => Array.from( arrayLike {length: count}, (_, index) => generatePicture(index));
+const generatePictures = (count) => Array.from( arrayLike: {length: count}, mapfn:(_, index: number) => generatePicture(index));
 
 generatePictures(PITURES_COUNT);
