@@ -65,4 +65,4 @@ const generatePicture = (id) => ({
 
 const generatePicture = (count) => Array.from( arrayLike: {length: count}, (_, index: number) => generatePicture(index));
 
-generatePicture(PITURES_COUNT);
+generatePicture(PICTURES_COUNT);
