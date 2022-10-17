@@ -55,7 +55,7 @@ const getRandomNumber = (min, max) => {
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
 
-const generateComment = (id) => ({
+const generatePicture = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
@@ -63,6 +63,6 @@ const generateComment = (id) => ({
   comments: generateComments(getRandomNumber(0,10))
 });
 
-const generatePictures = (count) => Array.from( arrayLike: {length: count}, mapfn:(_, index: number) => generatePicture(index));
+const generatePicture = (count) => Array.from( arrayLike: {length: count}, (_, index: number) => generatePicture(index));
 
-generatePictures(PITURES_COUNT);
+generatePicture(PITURES_COUNT);
