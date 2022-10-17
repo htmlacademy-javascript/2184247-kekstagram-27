@@ -55,7 +55,7 @@ const getRandomNumber = (min, max) => {
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
 
-const generatePicture = (id) => ({
+const generateComments = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
