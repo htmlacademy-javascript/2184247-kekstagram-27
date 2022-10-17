@@ -1,4 +1,4 @@
-const NAMES = [
+const names = [
   'Adam',
   'Adele',
   'Adrien',
@@ -27,7 +27,7 @@ const NAMES = [
 ];
 
 
-const DESCRIPTIONS = [
+const descriptions = [
   'Salut toi!',
   'Je suis un petit chaton, miaou!',
   'Donnez-moi quelque chose a manger, moore!',
@@ -37,7 +37,7 @@ const DESCRIPTIONS = [
   'Donne-moi du lait!',
 ];
 
-const MESSAGES = [
+const messages = [
   'В целом всё неплохо. Но не всё.',
   'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
@@ -61,16 +61,16 @@ const generateComment = (id) => ({
   name: getRandomArrayElement(names)
 });
 
-const generateComments = (count) => Array.from ( arrayLike: {length: count}, mapfn: (_, index: number) => generateComment(index));
+const generateComments = (count) => Array.from ({length: count}, (_, index) => generateComment(index));
 
 const generatePicture = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
-  description: getRandomArrayElement(DESCRIPTIONS),
+  description: getRandomArrayElement(descriptions),
   likes: getRandomNumber (15, 200),
   comments: generateComments(getRandomNumber(0,10))
 });
 
-const generatePictures = (count) => Array.from( arrayLike: {length: count}, mapfn: (_, index: number) => generatePicture(index));
+const generatePictures = (count) => Array.from({length: count}, (_, index) => generatePicture(index));
 
 generatePictures(PICTURES_COUNT);
