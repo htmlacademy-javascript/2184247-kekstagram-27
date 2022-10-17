@@ -54,8 +54,16 @@ const getRandomNumber = (min, max) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
+const generateComment = (id) => ({
+  id: id + 1,
+  avatar: 'img/avatar-${ getRandomNumber (1, 6) }.svg',
+  message: getRandomArrayElement(messages),
+  name: getRandomArrayElement(names)
+});
 
-const generateComments = (id) => ({
+const generateComments = (count) => Array.from ( arrayLike: {length: count}, mapfn: (_, index: number) => generateComment(index));
+
+const generatePicture = (id) => ({
   id: id + 1,
   url: `photos/${ id + 1 }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
@@ -63,6 +71,6 @@ const generateComments = (id) => ({
   comments: generateComments(getRandomNumber(0,10))
 });
 
-const generatePicture = (count) => Array.from( arrayLike: {length: count}, (_, index: number) => generatePicture(index));
+const generatePictures = (count) => Array.from( arrayLike: {length: count}, mapfn: (_, index: number) => generatePicture(index));
 
-generatePicture(PICTURES_COUNT);
+generatePictures(PICTURES_COUNT);
