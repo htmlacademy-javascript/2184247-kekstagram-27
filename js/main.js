@@ -1,3 +1,16 @@
+function getRandomPositiveInteger (min, max) {
+  if (min < 0 || max < 0) {
+    return NaN;
+  }
+  return Math.floor(Math.random() * (max - min) + min + 1);
+}
+getRandomPositiveInteger(1,1000);
+
+function checkStringLength (string, length) {
+  return string.length <= length;
+}
+checkStringLength (1, 300);
+
 const names = [
   'Adam',
   'Adele',
@@ -56,7 +69,7 @@ const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements
 
 const generateComment = (id) => ({
   id: id + 1,
-  avatar: 'img/avatar-${ getRandomNumber (1, 6) }.svg',
+  avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
   message: getRandomArrayElement(messages),
   name: getRandomArrayElement(names)
 });
@@ -65,7 +78,7 @@ const generateComments = (count) => Array.from ({length: count}, (_, index) => g
 
 const generatePicture = (id) => ({
   id: id + 1,
-  url: `photos/${ id + 1 }.jpg`,
+  url: `photos/${id + 1}.jpg`,
   description: getRandomArrayElement(descriptions),
   likes: getRandomNumber (15, 200),
   comments: generateComments(getRandomNumber(0,10))
@@ -74,3 +87,5 @@ const generatePicture = (id) => ({
 const generatePictures = (count) => Array.from({length: count}, (_, index) => generatePicture(index));
 
 generatePictures(PICTURES_COUNT);
+
+
