@@ -80,4 +80,6 @@ const generatePictures = (count) => Array.from({length: count}, (_, index) => ge
 
 generatePictures(PICTURES_COUNT);
 
+// test
+
 
