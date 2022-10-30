@@ -1,6 +1,7 @@
 import './util.js';
 import './data.js';
-import {generatePicture} from './data.js';
+import {generatePictures} from './data.js';
 
-generatePicture();
+const PICTURES_COUNT = 25;
 
+generatePictures(PICTURES_COUNT);
