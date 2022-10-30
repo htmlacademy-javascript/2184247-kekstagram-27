@@ -67,3 +67,5 @@ const generatePicture = (id) => ({
 const generatePictures = (count) => Array.from({length: count}, (_, index) => generatePicture(index));
 
 generatePictures(PICTURES_COUNT);
+
+export {generatePictures};
