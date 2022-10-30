@@ -1,4 +1,4 @@
-export const getRandomNumber = (min, max) => {
+const getRandomNumber = (min, max) => {
   if (min > max) {
     return NaN;
   }
@@ -11,3 +11,8 @@ function checkStringLength (string, length) {
   return string.length <= length;
 }
 checkStringLength (1, 300);
+
+export {
+getRandomNumber,
+getRandomArrayElement
+};
