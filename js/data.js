@@ -45,8 +45,6 @@ const messages = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
 
-const PICTURES_COUNT = 25;
-
 const generateComment = (id) => ({
   id: id + 1,
   avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
@@ -65,7 +63,5 @@ const generatePicture = (id) => ({
 });
 
 const generatePictures = (count) => Array.from({length: count}, (_, index) => generatePicture(index));
-
-generatePictures(PICTURES_COUNT);
 
 export {generatePictures};
