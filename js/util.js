@@ -13,6 +13,6 @@ function checkStringLength (string, length) {
 checkStringLength (1, 300);
 
 export {
-getRandomNumber,
-getRandomArrayElement
+  getRandomNumber,
+  getRandomArrayElement
 };
