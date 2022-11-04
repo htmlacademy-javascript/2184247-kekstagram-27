@@ -1,5 +1,7 @@
 import { closeOverlay } from './users-form.js';
 
+const body = document.body;
+
 const bigPicture = document.querySelector('.big-picture');
 const closeButton = bigPicture.querySelector('#picture-cancel');
 const socialComments = document.querySelector('.social__comments');
@@ -10,7 +12,7 @@ const likesCount = document.querySelector('.likes-count');
 const commentsCount = document.querySelector('.comments-count');
 const socialCommentCount = bigPicture.querySelector('.social__comment-count');
 const commentsLoader = bigPicture.querySelector('.comments-loader');
-const body = document.body;
+
 
 
 export const hideBigPicture = () => {
