@@ -1,27 +1,21 @@
-import {generatePicture} from './data.js';
-import {PICTURES_COUNT} from './main.js';
+const pictureTemplate = document.querySelector('#picture');
+const picturesElement = document.querySelector('.pictures');
 
-const picture = document.querySelector('#picture');
-const pictures = document.querySelector('.pictures');
+const renderPictureMiniatures = (pictures) => {
+  const picturesFragment = document.createDocumentFragment();
 
-const randomPictureInfortmation = generatePicture(PICTURES_COUNT);
-
-const generatePicture = (posts) => {
-  const photoFragment = document.createDocumentFragment();
-
-  posts.forEach((item) => {
+  pictures.forEach((item) => {
     const { url, comments, likes} = item;
-    const randomPicture = picture.cloneNode(true);
-    const randomPhoto = randomPicture.content;
+    const picture = pictureTemplate.cloneNode(true).content;
 
-    randomPhoto.querySelector('.picture__img').src = url;
-    randomPhoto.querySelector('.picture__comments').textContent = comments;
-    randomPhoto.querySelector('.picture__likes').textContent = likes;
+    picture.querySelector('.picture__img').src = url;
+    picture.querySelector('.picture__comments').textContent = comments;
+    picture.querySelector('.picture__likes').textContent = likes;
 
-    photoFragment.appendChild(randomPhoto);
+    picturesFragment.appendChild(picture);
   });
 
-  pictures.appendChild(photoFragment);
+  picturesElement.appendChild(picturesFragment);
 };
 
-generatePicture(randomPictureInformation);
+export {renderPictureMiniatures};
