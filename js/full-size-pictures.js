@@ -1,4 +1,5 @@
 import { closeOverlay } from './user-form.js';
+
 const bigPicture = document.querySelector('.big-picture');
 const closeButton = bigPicture.querySelector('#picture-cancel');
 const socialComments = document.querySelector('.social__comments');
